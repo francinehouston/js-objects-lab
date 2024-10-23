@@ -153,5 +153,4 @@
     { number: 151, name: "Mew", type: "psychic", hp: 100, starter: false },
   ]
   
-  //module.exports = pokemon
- export default pokemon;
+  module.exports = pokemon

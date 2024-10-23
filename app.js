@@ -1,7 +1,6 @@
-//const pokemon =  require('./data.js')
-import pokemon from './data.js';
- console.dir(pokemon, { maxArrayLength: null})
-console.log(pokemon);
+const pokemon =  require('./data.js')
+
+
 
 const game = {
     party: [],
@@ -286,10 +285,10 @@ Solve Exercise 11 here:
 */
 
 // write the function(method)
-game.catchPokemon = function(pokemon){
+game.catchPokemon = function(pokemonObj){
   //game.party.push(pokemonObj)
-pokemon.forEach(item => {
-  if (item.name = "pokeball" ){
+game.items.forEach(item => {
+  if (item.name === "pokeball" ){
     console.log(item)
     item.quantity -= 1
   }
@@ -399,3 +398,91 @@ Solve Exercise 16 here:
 */
 
 console.log(game)
+
+/*
+Exercise 17
+1. Arrange the Pokémon in `game.party` by their HP. The one with the highest HP should come first.
+2. You'll need to use the `.sort()` method. How does the compare function work in sorting numbers?
+
+
+Solve Exercise 17 here:
+*/
+//const characterwithHighestHP = [
+//{ number: 111, name: "Rhyhorn", type: "ground", hp: 80, starter : false },
+//{ number: 112, name: "Rhydon", type: "ground", hp: 105, starter : false },
+//{ number: 113, name: "Chansey", type: "normal", hp: 250, starter: false },
+//characterWithHighestHP.sort((a,b) => b.hp - a.hp)// Sort descending by HP\
+//];
+
+//const characterWithHighestHP = findHighestHP(game.party);
+//console.log(characterwithHighestHP);//Output:
+game.party.sort((a,b) => b. hp -a.hp);
+console.log(game.party)
+
+/*
+Exercise 18
+Add a new property to the `game` object called `collection` and initialize its value to an empty array.
+
+Copy the `catchPokemon` method you wrote in Exercise Twelve and paste it below. Modify it so that:
+  - Ensure that no more than six Pokemon can be in the party at any time. 
+    Excess Pokemon should be placed in the `game.collection` array.
+  - It's up to you how to distribute Pokemon in a situation where more than six 
+    would be placed into the `game.party` array.
+
+Again, for this exercise, it's okay to have a negative number of pokeballs.
+
+After updating the method, use it by calling it and passing in a pokemon object of your choice from the `pokemon` data to catch it.
+
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 18 here:
+*/
+ game.collection = [];
+ 
+// write the function(method)
+game.catchPokemon = function(pokemonObj){
+  
+game.items.forEach(item => {
+  if (item.name === "pokeball" ){
+    console.log(item)
+    item.quantity -= 1
+  } 
+}) 
+
+if (game.party.length < 6 ){
+ game.party.push(pokemonObj)
+} else {
+game.collection.push(pokemonObj)
+} 
+
+ }
+
+ // call the function
+ //game.catchPokemon(pokemon[0])
+ game.catchPokemon(game.items)
+
+
+  console.log(game.items,"answer for exercise 18")
+
+  /*
+Exercise 19
+Copy the `catchPokemon` method that you just wrote above, and paste it below. The time has come to make it so that we cannot catch a Pokemon when we do not have any pokeballs to catch it with. 
+
+Modify the method so that if there are no pokeballs a message will be displayed that there are not enough pokeballs to catch the desired Pokemon.
+
+Also, ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 19 here:
+*/
+
+//let gamecollection = [];
+ 
+
+//game.gyms.forEach(gym => {
+  //if (gym.difficulty < 6) {
+    //console.log("Number is within the limit (<= 6).")
+   // gym.completed = true
+//game.gyms.push(game.collection)
+  //}
+  //})
+  //console.log(game.items,"answer for exercise 18")

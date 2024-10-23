@@ -65,8 +65,7 @@ let result = []
 pokemon.forEach(element => {
 
 if(element.starter === true) {
-  //console.log(element.name,'is a starter pokemon!')
-//game.party.push(element) 
+ 
 result.push(element)
 }
 })
@@ -81,7 +80,7 @@ console.log(game)
 
 
 
-//const starters = []
+
 
 
 
@@ -235,18 +234,14 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
-let starter = []
+
 
 
 
 pokemon.forEach(element => {
-
-if(element.starter === true) {
-  //console.log(element.name,'is a starter pokemon!')
-//game.party.push(element) 
-//starter.push(element)
-console.log(element.name)
-}
+  if(element.starter === true) {
+    console.log(element.name,"is a starter")
+  }
 })
 
 
@@ -414,8 +409,7 @@ Solve Exercise 17 here:
 //characterWithHighestHP.sort((a,b) => b.hp - a.hp)// Sort descending by HP\
 //];
 
-//const characterWithHighestHP = findHighestHP(game.party);
-//console.log(characterwithHighestHP);//Output:
+
 game.party.sort((a,b) => b. hp -a.hp);
 console.log(game.party)
 
@@ -450,15 +444,15 @@ game.items.forEach(item => {
 }) 
 
 if (game.party.length < 6 ){
- game.party.push(pokemonObj)
+  game.party.push(pokemonObj)
 } else {
-game.collection.push(pokemonObj)
+  game.collection.push(pokemonObj)
 } 
 
  }
 
  // call the function
- //game.catchPokemon(pokemon[0])
+
  game.catchPokemon(game.items)
 
 
